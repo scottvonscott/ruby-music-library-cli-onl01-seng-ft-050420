@@ -78,7 +78,7 @@ class MusicLibraryController
     gets.chomp
     genre_choice = gets.chomp
     sorted_genre = []
-    # binding.pry
+    binding.pry
       Genre.all.detect do |genre|
         if genre.name == genre_choice
             sorted_genre = genre.songs.sort_by do |song|
