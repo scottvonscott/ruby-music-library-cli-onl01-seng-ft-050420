@@ -93,8 +93,6 @@ class MusicLibraryController
     number_choice = gets.chomp.to_i
     if (1..Song.all.size).include?(number_choice)
       puts "Playing #{sorted_songs[number_choice].name} by #{sorted_songs[number_choice].artist.name}"
-      binding.pry
-
     else
       gets.chomp
     end
