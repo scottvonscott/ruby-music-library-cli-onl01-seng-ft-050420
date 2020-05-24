@@ -58,6 +58,7 @@ class MusicLibraryController
     sorted_artist = []
       Artist.all.detect do |artist|
         if list_artists.include?(artist_choice)
+          binding.pry
             sorted_artist = artist.songs.sort_by do |song|
                song.name
              end
