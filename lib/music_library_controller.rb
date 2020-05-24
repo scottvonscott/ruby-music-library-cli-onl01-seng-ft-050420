@@ -20,23 +20,22 @@ class MusicLibraryController
     puts "What would you like to do?"
     user_input = gets.chomp
     gets.chomp until gets.chomp == "exit"
-  end
 
-    if user_input == "list_songs"
-      list_songs
-    elsif user_input == "list_artists"
-      list_artists
-    elsif user_input == "list_genres"
-      list_genres
-    elsif user_input == "list_songs_by_artist"
-      list_songs_by_artist
-    elsif user_input == "list_songs_by_genre"
-      list_songs_by_genre
-    elsif user_input == "play_song"
-      play_song
-    else
-      puts "Please make a valid options."
-    end
+    # if user_input == "list_songs"
+    #   list_songs
+    # elsif user_input == "list_artists"
+    #   list_artists
+    # elsif user_input == "list_genres"
+    #   list_genres
+    # elsif user_input == "list_songs_by_artist"
+    #   list_songs_by_artist
+    # elsif user_input == "list_songs_by_genre"
+    #   list_songs_by_genre
+    # elsif user_input == "play_song"
+    #   play_song
+    # else
+    #   puts "Please make a valid options."
+    # end
 
   end
 
