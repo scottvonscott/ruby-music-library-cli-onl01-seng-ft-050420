@@ -34,7 +34,6 @@ class MusicLibraryController
     elsif user_input == "play_song"
       play_song
     else
-      exit
     end
 
   end
