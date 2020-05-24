@@ -81,7 +81,9 @@ class MusicLibraryController
     Genre.all.detect do |genre|
       if genre.name == genre_choice
         sorted_genre = genre.songs.sort_by {|song| song.name}
-        binding.pry
+      end
+      binding.pry
+
                 sorted_genre.each.with_index(1) do |song, index|
                   puts "#{index}. #{song.artist.name} - #{song.name}"
                 end
