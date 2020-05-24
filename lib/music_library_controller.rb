@@ -79,7 +79,6 @@ class MusicLibraryController
 
     def list_songs_by_genre
       puts "Please enter the name of a genre:"
-      gets.chomp
       genre_choice = gets.chomp
       sorted_genre = []
       # binding.pry
