@@ -23,7 +23,6 @@ class MusicLibraryController
   end
 
   def list_songs
-    sorted_songs = []
     sorted_songs = Song.all.sort_by do |song|
       song.name
     end
