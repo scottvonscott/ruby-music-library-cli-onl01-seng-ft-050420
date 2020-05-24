@@ -51,6 +51,4 @@ class Genre
     all_artists.uniq
   end
 
-
-
 end
