@@ -18,8 +18,10 @@ class MusicLibraryController
     puts "To play a song, enter 'play song'."
     puts "To quit, type 'exit'."
     puts "What would you like to do?"
-    gets.chomp
+    user_input = gets.chomp
     gets.chomp until gets.chomp == "exit"
+
+    if gets.chomp
   end
 
   def list_songs
