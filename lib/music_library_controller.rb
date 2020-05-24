@@ -92,7 +92,8 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     number_choice = gets.chomp
-    if number_choice == (1..list_songs.size)
+    valid_choice = (1..list_songs.size)
+    if valid_choice
       puts "Playing #{list_songs[number_choice]}"
     else
       gets.chomp
