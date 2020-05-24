@@ -1,4 +1,3 @@
-
 class Artist
 
   extend Concerns::Findable
@@ -12,8 +11,6 @@ class Artist
     @songs = []
     save
   end
-
-
 
   def save
     unless @@all.include?(self)

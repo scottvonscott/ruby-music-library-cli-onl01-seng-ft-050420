@@ -18,15 +18,28 @@ class MusicLibraryController
     puts "To play a song, enter 'play song'."
     puts "To quit, type 'exit'."
     puts "What would you like to do?"
-    gets.chomp
+    user_input = gets.chomp
     gets.chomp until gets.chomp == "exit"
+
+    if user_input == "list songs"
+      list_songs
+    elsif user_input == "list artists"
+      list_artists
+    elsif user_input == "list genres"
+      list_genres
+    elsif user_input == "list artist"
+      list_songs_by_artist
+    elsif user_input == "list genre"
+      list_songs_by_genre
+    elsif user_input == "play song"
+      play_song
+    else
+    end
+
   end
 
   def list_songs
-    sorted_songs = []
-    sorted_songs = Song.all.sort_by do |song|
-      song.name
-    end
+    sorted_songs = Song.all.sort_by {|song| song.name}
     sorted_songs.each.with_index(1) do |song, index|
       # binding.pry
       puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
@@ -34,7 +47,6 @@ class MusicLibraryController
   end
 
   def list_artists
-    sorted_artists = []
     sorted_artists = Artist.all.sort_by do |artist|
       artist.name
     end
@@ -45,7 +57,6 @@ class MusicLibraryController
   end
 
   def list_genres
-    sorted_genres = []
     sorted_genres = Genre.all.sort_by do |genre|
       genre.name
     end
@@ -57,11 +68,9 @@ class MusicLibraryController
 
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
-    gets.chomp
     artist_choice = gets.chomp
     sorted_artist = []
-
-      Artist.all.detect do |artist|
+      Artist.all.each do |artist|
         if artist.name == artist_choice
             sorted_artist = artist.songs.sort_by do |song|
                song.name
@@ -75,36 +84,35 @@ class MusicLibraryController
       end
     end
 
-
-  def list_songs_by_genre
-    puts "Please enter the name of a genre:"
-    gets.chomp
-    genre_choice = gets.chomp
-    sorted_genre = []
-    binding.pry
-      Genre.all.detect do |genre|
-        if genre.name == genre_choice
-            sorted_genre = genre.songs.sort_by do |song|
-               song.name
-             end
-                sorted_genre.each.with_index(1) do |song, index|
-                  puts "#{index}. #{song.artist.name} - #{song.name}"
-                end
-         else
-           gets.chomp
-         end
+    def list_songs_by_genre
+      puts "Please enter the name of a genre:"
+      genre_choice = gets.chomp
+      sorted_genre = []
+        Genre.all.each do |genre|
+          if genre.name == genre_choice
+              sorted_genre = genre.songs.sort_by do |song|
+                 song.name
+               end
+                  sorted_genre.each.with_index(1) do |song, index|
+                    puts "#{index}. #{song.artist.name} - #{song.name}"
+                  end
+           else
+             gets.chomp
+           end
+        end
       end
-    end
 
 
   def play_song
+    puts "Which song number would you like to play?"
+    sorted_songs = Song.all.sort_by {|song| song.name}
+    number_choice = gets.chomp.to_i
+    if (1..Song.all.size).include?(number_choice)
+      puts "Playing #{sorted_songs[number_choice -1].name} by #{sorted_songs[number_choice -1].artist.name}"
+    else
+      gets.chomp
+    end
   end
-
-
-
-
-
-
 
 
 end
