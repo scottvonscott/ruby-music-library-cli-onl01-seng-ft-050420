@@ -93,9 +93,13 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     number_choice = gets.chomp
     binding.pry
-    valid_choice = (1..Song.all.size)
-    if number_choice == valid_choice
-      puts "Playing #{list_songs[number_choice]}"
+
+    if number_choice.between?(1, Song.all.length)
+      sorted_songs = Song.all.sort_by do |song|
+        song.name
+      end
+      index = number_choice -1
+      puts sorted_songs[index].name
     else
       gets.chomp
     end
