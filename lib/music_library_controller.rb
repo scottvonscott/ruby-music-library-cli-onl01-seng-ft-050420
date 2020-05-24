@@ -93,8 +93,7 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     number_choice = gets.chomp.to_i
     if number_choice == (1..Song.all.size)
-      puts "Playing #{list_songs[number_choice]}"
-      binding.pry
+      puts "Playing"
     else
       gets.chomp
     end
