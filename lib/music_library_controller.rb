@@ -20,6 +20,24 @@ class MusicLibraryController
     puts "What would you like to do?"
     user_input = gets.chomp
     gets.chomp until gets.chomp == "exit"
+
+    case user_input
+    when "list_songs"
+      list_songs
+    when "list_artists"
+      list_artists
+    when "list_genres"
+      list_genres
+    when "list_songs_by_artist"
+      list_songs_by_artist
+    when "list_songs_by_genre"
+      list_songs_by_genre
+    when "play_song"
+      play_song
+    else
+      puts "Please make a valid options."
+    end
+
   end
 
   def list_songs
