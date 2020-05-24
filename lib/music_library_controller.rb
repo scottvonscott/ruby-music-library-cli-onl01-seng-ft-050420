@@ -89,6 +89,7 @@ class MusicLibraryController
 
   def play_song
     puts "Which song number would you like to play?"
+    sorted_songs = Song.all.sort_by {|song| song.name}
     number_choice = gets.chomp.to_i
     if (1..Song.all.size).include?(number_choice)
       puts "Playing #{list_songs[4]}"
