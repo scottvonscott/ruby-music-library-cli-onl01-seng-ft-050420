@@ -57,16 +57,17 @@ class MusicLibraryController
     artist_choice = gets.chomp
     sorted_artist = []
       Artist.all.detect do |artist|
-        if artist.name == artist_choice
-            sorted_artist = artist.songs.sort_by do |song|
-               song.name
-             end
-                sorted_artist.each.with_index(1) do |song, index|
-                  puts "#{index}. #{song.name} - #{song.genre.name}"
-                end
-         else
-           gets.chomp
-         end
+         artist.name == artist_choice
+         binging.pry
+        #     sorted_artist = artist.songs.sort_by do |song|
+        #        song.name
+        #      end
+        #         sorted_artist.each.with_index(1) do |song, index|
+        #           puts "#{index}. #{song.name} - #{song.genre.name}"
+        #         end
+        #  else
+        #    gets.chomp
+        #  end
       end
     end
 
@@ -76,7 +77,6 @@ class MusicLibraryController
       sorted_genre = []
         Genre.all.detect do |genre|
            genre.name == genre_choice
-           binding.pry
           #     sorted_genre = genre.songs.sort_by do |song|
           #        song.name
           #      end
