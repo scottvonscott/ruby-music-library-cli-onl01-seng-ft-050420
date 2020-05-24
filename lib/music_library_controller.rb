@@ -34,7 +34,7 @@ class MusicLibraryController
     elsif user_input == "play_song"
       play_song
     else
-      gets.chomp
+      exit
     end
 
   end
