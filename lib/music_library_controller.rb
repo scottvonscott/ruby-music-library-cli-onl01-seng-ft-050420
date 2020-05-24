@@ -56,7 +56,6 @@ class MusicLibraryController
     puts "Please enter the name of an artist:"
     artist_choice = gets.chomp
     sorted_artist = []
-
       Artist.all.detect do |artist|
         if artist.name == artist_choice
             sorted_artist = artist.songs.sort_by do |song|
