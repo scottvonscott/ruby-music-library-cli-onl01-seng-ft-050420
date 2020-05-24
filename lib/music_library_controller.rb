@@ -33,6 +33,7 @@ class MusicLibraryController
   end
 
   def list_artists
+    sorted_artists = []
     sorted_artists = Artist.all.sort_by do |artist|
       artist.name
     end
@@ -43,6 +44,7 @@ class MusicLibraryController
   end
 
   def list_genres
+    sorted_genres = []
     sorted_genres = Genre.all.sort_by do |genre|
       genre.name
     end
