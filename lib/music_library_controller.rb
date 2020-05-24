@@ -83,7 +83,6 @@ class MusicLibraryController
                     puts "#{index}. #{song.artist.name} - #{song.name}"
                   end
            else
-             puts "Please enter the name of a genre:"
              gets.chomp
            end
         end
