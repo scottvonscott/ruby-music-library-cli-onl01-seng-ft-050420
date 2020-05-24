@@ -92,8 +92,9 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     number_choice = gets.chomp.to_i
+    binding.pry
     if (1..Song.all.size).include?(number_choice)
-      puts "Playing #{list_songs[2]}"
+      puts "Playing #{list_songs[4]}"
     else
       gets.chomp
     end
