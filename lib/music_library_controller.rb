@@ -21,7 +21,7 @@ class MusicLibraryController
     user_input = gets.chomp
     gets.chomp until gets.chomp == "exit"
 
-    if user_input == "list_songs"
+    if user_input == "listsongs"
       list_songs
     elsif user_input == "list artists"
       list_artists
