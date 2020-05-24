@@ -94,6 +94,7 @@ class MusicLibraryController
     number_choice = gets.chomp
     binding.pry
     if number_choice.between?(1, list_songs.size)
+      binding.pry
       puts "Playing #{list_songs[number_choice]}"
     else
       gets.chomp
