@@ -22,7 +22,7 @@ class MusicLibraryController
     gets.chomp until gets.chomp == "exit"
 
     if user_input == "list_songs"
-      list_songs
+      self.list_songs
     elsif user_input == "list_artists"
       list_artists
     elsif user_input == "list_genres"
