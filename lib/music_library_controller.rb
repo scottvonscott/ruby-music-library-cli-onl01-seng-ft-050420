@@ -93,7 +93,6 @@ class MusicLibraryController
            gets.chomp
          end
       end
-      binding.pry
     end
 
 
