@@ -60,6 +60,7 @@ class MusicLibraryController
 
       Artist.all.detect do |artist|
         if artist.name == artist_choice
+          binding.pry
             sorted_artist = artist.songs.sort_by do |song|
                song.name
              end
